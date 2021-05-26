@@ -23,27 +23,30 @@ public class conta {
 		char resp = sc.next().charAt(0);
 
 		if (resp != 'y') {
+			System.out.println();
 			dadosBancarios = new DadosBancarios(account, name);
 		} else {
+			System.out.println();
 			System.out.println("Enter initial deposit value: ");
 			double value = sc.nextDouble();
 			dadosBancarios = new DadosBancarios(account, name, value);
 		}
 		
-		System.out.println(" Account data: "+ dadosBancarios);
+		System.out.println("Account data: ");
+		System.out.println(dadosBancarios);
 		
 		System.out.println();
 		System.out.print("Enter a deposit value: ");
 		double value = sc.nextDouble();
 		dadosBancarios.deposit(value);
-		System.out.println(" Updated account data: ");
+		System.out.println("Updated account data: ");
 		System.out.println(dadosBancarios);
 		
 		System.out.println();
 		System.out.print("Enter a withdraw value: ");
 		value = sc.nextDouble();
 		dadosBancarios.withdraw(value);
-		System.out.println(" Updated account data: ");
+		System.out.println("Updated account data: ");
 		System.out.println(dadosBancarios);
 		
 

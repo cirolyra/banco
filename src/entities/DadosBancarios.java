@@ -19,7 +19,7 @@ public class DadosBancarios {
 	public DadosBancarios(int numConta, String titConta, double saldo) {
 		this.numConta = numConta;
 		this.titConta = titConta;
-		this.saldo = saldo;
+		deposit(saldo);
 	}
 
 	public int getNumConta() {
