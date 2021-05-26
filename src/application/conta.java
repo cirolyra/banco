@@ -12,41 +12,41 @@ public class conta {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
-		DadosBancarios dadosBancarios;
+		DadosBancarios account;
 
 		System.out.print("Enter account number: ");
-		int account = sc.nextInt();
+		int number = sc.nextInt();
 		sc.nextLine();
 		System.out.print("Enter account holder: ");
 		String holder = sc.nextLine();
 		System.out.print("Is there an initial deposit (y/n):");
-		char resp = sc.next().charAt(0);
+		char answer = sc.next().charAt(0);
 
-		if (resp != 'y') {
-			dadosBancarios = new DadosBancarios(account, holder);
+		if (answer != 'y') {
+			account = new DadosBancarios(number, holder);
 		} else {
 			System.out.println();
 			System.out.println("Enter initial deposit value: ");
 			double initialValue = sc.nextDouble();
-			dadosBancarios = new DadosBancarios(account, holder, initialValue);
+			account = new DadosBancarios(number, holder, initialValue);
 		}
 
 		System.out.println("Account data: ");
-		System.out.println(dadosBancarios);
+		System.out.println(account);
 
 		System.out.println();
 		System.out.print("Enter a deposit value: ");
 		double depositValue = sc.nextDouble();
-		dadosBancarios.deposit(depositValue);
+		account.deposit(depositValue);
 		System.out.println("Updated account data: ");
-		System.out.println(dadosBancarios);
+		System.out.println(account);
 
 		System.out.println();
 		System.out.print("Enter a withdraw value: ");
 		double withdrawValue = sc.nextDouble();
-		dadosBancarios.withdraw(withdrawValue);
+		account.withdraw(withdrawValue);
 		System.out.println("Updated account data: ");
-		System.out.println(dadosBancarios);
+		System.out.println(account);
 
 		sc.close();
 
